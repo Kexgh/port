@@ -4,483 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="favicon-32x32.png" href="/favicon.ico">
-    <title>kexgh | Cybersecurity Portfolio</title>
-    <style>
-        /* Global Styles */
-        :root {
-            --primary-color: #000;
-            --secondary-color: #7ab564;
-            --background-color: #d6d6d6;
-            --text-color: #1d1d1f;
-            --light-gray: #86868b;
-            --border-radius: 12px;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-        }
-        
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        
-        /* Typography */
-        h1, h2, h3 {
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            font-size: 48px;
-            letter-spacing: -0.5px;
-        }
-        
-        h2 {
-            font-size: 32px;
-            letter-spacing: -0.3px;
-        }
-        
-        h3 {
-            font-size: 24px;
-            letter-spacing: -0.2px;
-        }
-        
-        p {
-            margin-bottom: 16px;
-            color: var(--light-gray);
-        }
-        
-        a {
-            color: var(--secondary-color);
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-        
-        a:hover {
-            opacity: 0.8;
-        }
-        
-        /* Button */
-        .button {
-            display: inline-block;
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 20px;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Header */
-        header {
-            padding: 20px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(245, 245, 247, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-weight: 600;
-            font-size: 20px;
-            color: var(--primary-color);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 32px;
-        }
-        
-        .nav-links a {
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding-top: 80px;
-        }
-        
-        .hero-content {
-            max-width: 700px;
-        }
-        
-        .subtitle {
-            color: var(--secondary-color);
-            font-weight: 500;
-            margin-bottom: 8px;
-            font-size: 18px;
-        }
-        
-        /* Section */
-        section {
-            padding: 100px 0;
-        }
-        
-        /* About Section */
-        .about {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-        }
-        
-  .about-image {
-    width: 100%;
-    height: 400px; /* Fixed height of the container */
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.about-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-        
-        /* Skills */
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 24px;
-            margin-top: 48px;
-        }
-        
-        .skill-card {
-            background-color: white;
-            padding: 24px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .skill-icon {
-            font-size: 32px;
-            margin-bottom: 16px;
-            color: var(--secondary-color);
-        }
-        
-        /* Projects */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 32px;
-            margin-top: 48px;
-        }
-        
-        .project-card {
-            background-color: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background-color: #e5e5e7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .project-content {
-            padding: 24px;
-        }
-        
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 16px;
-        }
-        
-        .project-tag {
-            background-color: var(--background-color);
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 14px;
-            color: var(--light-gray);
-        }
-        
-        /* Construction Notice */
-        .construction-notice {
-            text-align: center;
-            margin-top: 40px;
-            padding: 15px;
-            background-color: rgba(255, 204, 0, 0.1);
-            border-radius: var(--border-radius);
-            border: 1px dashed rgba(255, 204, 0, 0.5);
-            animation: pulse 2s infinite;
-        }
-        
-        .construction-notice h3 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            color: #FF9500;
-            margin-bottom: 0;
-        }
-        
-        @keyframes pulse {
-            0% { opacity: 0.7; }
-            50% { opacity: 1; }
-            100% { opacity: 0.7; }
-        }
-        
-        /* Contact */
-        .contact-form {
-            max-width: 600px;
-            margin: 48px auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 24px;
-        }
-        
-        input, textarea {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: var(--border-radius);
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--secondary-color);
-        }
-        
-        textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        button {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 20px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Footer */
-        footer {
-            padding: 48px 0;
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 48px;
-        }
-        
-        .footer-column h3 {
-            color: white;
-            margin-bottom: 24px;
-        }
-        
-        .footer-column p, .footer-column a {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 8px;
-            display: block;
-        }
-        
-        
-        
-       .social-links {
-    display: flex;
-    gap: 16px;
-    margin-top: 16px;
-}
-
-.social-links {
-    display: flex;
-    gap: 16px;
-    margin-top: 16px;
-}
-
-.social-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 20px;
-    text-decoration: none;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-
-    transform: translateY(-3px);
-}
-        
-        .copyright {
-            margin-top: 48px;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 14px;
-        }
-        
-        /* Dark Mode Animation */
-        .dark-mode-toggle {
-            position: relative;
-            width: 50px;
-            height: 26px;
-            border-radius: 13px;
-            background-color: var(--background-color);
-            cursor: pointer;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .toggle-slider {
-            position: absolute;
-            top: 2px;
-            left: 2px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--secondary-color);
-            transition: 0.3s;
-        }
-        
-        .dark-mode-active .toggle-slider {
-            transform: translateX(24px);
-        }
-        
-        /* Loading Animation */
-        .loading-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: var(--primary-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.6s ease-out, visibility 0.6s ease-out;
-        }
-        
-        .loading-content {
-            text-align: center;
-        }
-        
-        .loading-logo {
-            font-size: 32px;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 24px;
-            letter-spacing: -1px;
-        }
-        
-        .loading-bar-container {
-            width: 200px;
-            height: 4px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-        
-        .loading-bar {
-            height: 100%;
-            width: 0;
-            background-color: var(--secondary-color);
-            border-radius: 2px;
-            transition: width 2s ease-in-out;
-        }
-        
-        /* Social Icons SVG */
-        .social-svg {
-            width: 24px;
-            height: 24px;
-            fill: white;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-            
-            h2 {
-                font-size: 28px;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-            
-            .about {
-                grid-template-columns: 1fr;
-            }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Dylan Keogh | Cybersecurity Portfolio</title>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -497,7 +22,7 @@
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">kexgh</a>
+                <a href="#" class="logo">Dylan Keogh</a>
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
@@ -565,32 +90,145 @@
                     <p>Implementing encryption protocols and secure key management systems to ensure data confidentiality.</p>
                 </div>
                 
-             
-                
                 <div class="skill-card">
                     <div class="skill-icon">💻</div>
                     <h3>Security Analysis</h3>
                     <p>Analyzing security logs and network traffic to detect potential threats and anomalies.</p>
                 </div>
-                
-                
             </div>
         </div>
     </section>
+
+ <!-- Education Section -->
+<section id="education">
+    <div class="container">
+        <h2>Education</h2>
+        <p>My academic journey in cybersecurity and computer science.</p>
+        
+        <div class="education-timeline">
+            <!-- Current Education -->
+            <div class="education-card">
+                <div class="education-year">
+                    <span>2022 – Present</span>
+                </div>
+                <div class="education-content">
+                    <h3>Technological University Dublin, Blanchardstown</h3>
+                    <h4>Digital Forensics & Cyber Security, NFQ Level 8</h4>
+                    <p>Currently pursuing advanced studies in cybersecurity with focus on practical applications and research.</p>
+                    <div class="education-modules">
+                        <span class="module-tag">Secure Programming</span>
+                        <span class="module-tag">Secure Communications</span>
+                        <span class="module-tag">Digital & Network Forensics</span>
+                        <span class="module-tag">Network Security</span>
+                        <span class="module-tag">Penetration Testing</span>
+                        <span class="module-tag">Computer Systems & Architecture</span>
+                        <span class="module-tag">Mathematics</span>
+                        <span class="module-tag">Networking</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Previous Education 1 -->
+            <div class="education-card">
+                <div class="education-year">
+                    <span>2021 – 2022</span>
+                </div>
+                <div class="education-content">
+                    <h3>Blackrock Further Education Institute, Co. Dublin</h3>
+                    <h4>Computer Networks & Cyber Security, NFQ QQI Level 5</h4>
+                    <p>Developed foundational knowledge in networking and security principles.</p>
+                    <div class="education-modules">
+                        <span class="module-tag">Virtualization</span>
+                        <span class="module-tag">Computer Hardware</span>
+                        <span class="module-tag">Distributed Systems</span>
+                        <span class="module-tag">Mathematics</span>
+                        <span class="module-tag">Communications</span>
+                        <span class="module-tag">Operating Systems</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Previous Education 2 -->
+            <div class="education-card">
+                <div class="education-year">
+                    <span>2018 – 2019</span>
+                </div>
+                <div class="education-content">
+                    <h3>Blackrock Further Education Institute, Co. Dublin</h3>
+                    <h4>Computer Science, NFQ QQI Level 5</h4>
+                    <p>Built a strong foundation in programming and computer systems.</p>
+                    <div class="education-modules">
+                        <span class="module-tag">Java</span>
+                        <span class="module-tag">Web Development</span>
+                        <span class="module-tag">Mobile Technologies</span>
+                        <span class="module-tag">Databases</span>
+                        <span class="module-tag">Communications</span>
+                        <span class="module-tag">Mathematics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2>Featured Projects</h2>
-
+            <p>A selection of my cybersecurity projects and tools.</p>
             
-           
-                       
-    
-            
-            <!-- Construction Notice -->
-            <div class="construction-notice">
-                <h3>UNDER CONSTRUCTION 🚧</h3>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="project1.png" alt="HighwayOfHavocFinal">
+                    </div>
+                    <div class="project-content">
+                        <h3>Highway of Havoc</h3>
+                        <p> A Simple 3D temple run esque game where the player is tasked with driving down a road avoiding various obstacles</p>
+                        <div class="project-tags">
+                            <span class="project-tag">ShaderLab</span>
+                            <span class="project-tag">HLSL</span>
+                            <span class="project-tag">C#</span>
+                        </div>
+                        <a href="https://github.com/kexV2/HighwayOfHavocFinal" class="button" style="margin-top: 16px;">View on GitHub</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="project2.png" alt="Cryptohack">
+                    </div>
+                    <div class="project-content">
+                        <h3>Cryptohack</h3>
+                        <p>Obtained over 1600 points on Cryptohack by solving numerous challenges using python from chapters ranging from Mathematics, RSA, Symmetyric Ciphers and Crypto on the web </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Cryptography</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Wireshark</span>
+                            <span class="project-tag">JTW Sessions</span>
+                        </div>
+                        <a href="https://github.com/kexV2/Cryptohack" class="button" style="margin-top: 16px;">View on GitHub</a>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Project3.png" alt="Veriscan">
+                    </div>
+                    <div class="project-content">
+                        <h3>Veriscan</h3>
+                        <p> Developing a software to distinguish deepfake media via machine learning using forensic indicators</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Machine Learning</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Backend API</span>
+                        </div>
+                        <a href="https://github.com/kexV2/VeriScan" class="button" style="margin-top: 16px;">View on GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -618,17 +256,19 @@
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
+                    <a href="#education">Education</a>
                 </div>
                 
                 <div class="footer-column">
-    <h3>Connect</h3>
-    <div class="social-links">
-        <a href="https://x.com/kexgh" class="social-icon">🐦</a>
-        <a href="https://www.instagram.com/kexgh/" class="social-icon">📸</a>
-        <a href="https://github.com/kexV2" class="social-icon">💻</a>
-        <a href="https://www.linkedin.com/in/dylan-k-a25b25305/" class="social-icon">💼</a>
-    </div>
-</div>
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://x.com/kexgh" class="social-icon">🐦</a>
+                        <a href="https://www.instagram.com/kexgh/" class="social-icon">📸</a>
+                        <a href="https://github.com/kexV2" class="social-icon">💻</a>
+                        <a href="https://www.linkedin.com/in/dylan-k-a25b25305/" class="social-icon">💼</a>
+                    </div>
+                </div>
+            </div>
             
             <div class="copyright">
                 © 2025 kexgh. All rights reserved.
@@ -636,102 +276,6 @@
         </div>
     </footer>
 
-    <script>
-        // Loading animation
-        window.addEventListener('load', function() {
-            const loadingScreen = document.querySelector('.loading-screen');
-            const loadingBar = document.querySelector('.loading-bar');
-            
-            // Animate the loading bar
-            loadingBar.style.width = '100%';
-            
-            // Hide loading screen after animation completes
-            setTimeout(function() {
-                loadingScreen.style.opacity = '0';
-                setTimeout(function() {
-                    loadingScreen.style.visibility = 'hidden';
-                }, 600);
-            }, 2000);
-        });
-        
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-        
-        // Dark mode toggle functionality
-        const darkModeToggle = document.querySelector('.dark-mode-toggle');
-        const root = document.documentElement;
-        
-        darkModeToggle.addEventListener('click', () => {
-            darkModeToggle.classList.toggle('dark-mode-active');
-            
-            if (darkModeToggle.classList.contains('dark-mode-active')) {
-                // Switch to dark mode
-                document.body.style.backgroundColor = '#000';
-                document.body.style.color = '#f5f5f7';
-                document.querySelector('header').style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
-                document.querySelectorAll('.nav-links a, .logo').forEach(el => {
-                    el.style.color = '#f5f5f7';
-                });
-                document.querySelectorAll('.skill-card, .project-card').forEach(el => {
-                    el.style.backgroundColor = '#1d1d1f';
-                });
-                document.querySelectorAll('input, textarea').forEach(el => {
-                    el.style.backgroundColor = '#1d1d1f';
-                    el.style.color = '#f5f5f7';
-                    el.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                });
-                document.querySelectorAll('.project-tag').forEach(el => {
-                    el.style.backgroundColor = '#000';
-                });
-            } else {
-                // Switch to light mode
-                document.body.style.backgroundColor = '#f5f5f7';
-                document.body.style.color = '#1d1d1f';
-                document.querySelector('header').style.backgroundColor = 'rgba(245, 245, 247, 0.8)';
-                document.querySelectorAll('.nav-links a, .logo').forEach(el => {
-                    el.style.color = '#000';
-                });
-                document.querySelectorAll('.skill-card, .project-card').forEach(el => {
-                    el.style.backgroundColor = 'white';
-                });
-                document.querySelectorAll('input, textarea').forEach(el => {
-                    el.style.backgroundColor = 'white';
-                    el.style.color = '#1d1d1f';
-                    el.style.borderColor = 'rgba(0, 0, 0, 0.1)';
-                });
-                document.querySelectorAll('.project-tag').forEach(el => {
-                    el.style.backgroundColor = '#f5f5f7';
-                });
-            }
-        });
-        
-        // Reveal animations on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (sectionTop < windowHeight * 0.75) {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }
-            });
-        });
-        
-        // Initialize sections with opacity 0
-        document.querySelectorAll('section:not(.hero)').forEach(section => {
-            section.style.opacity = '0';
-            section.style.transform = 'translateY(20px)';
-            section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        });
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
