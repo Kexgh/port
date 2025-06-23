@@ -579,3 +579,42 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Project Showcase Custom Styling (Optional) */
+#project-showcase {
+    padding: 100px 0;
+}
+
+#project-showcase h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#project-showcase .project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#project-showcase .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.07);
+}
+
+#project-showcase .project-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 16px;
+}
+
+#project-showcase .project-content li {
+    color: var(--light-gray);
+    margin-bottom: 8px;
+}
