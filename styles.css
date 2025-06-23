@@ -618,3 +618,15 @@ footer {
     color: var(--light-gray);
     margin-bottom: 8px;
 }
+
+
+/* Enlarge showcase image */
+#project-showcase .project-image {
+    height: 520px; /* previously 200px, now taller */
+}
+
+#project-showcase .project-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
